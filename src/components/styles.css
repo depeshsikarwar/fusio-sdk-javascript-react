@@ -1,0 +1,347 @@
+/**
+ * Fusio React SDK Default Styles
+ * Modern, accessible, CSS-variable based styles for Fusio authentication components.
+ * Independent of any framework; easily customizable by overriding CSS variables.
+ */
+
+:root {
+  --fusio-primary: #3b82f6;
+  --fusio-primary-hover: #2563eb;
+  --fusio-primary-text: #ffffff;
+  --fusio-bg: #ffffff;
+  --fusio-surface: #f8fafc;
+  --fusio-border: #e2e8f0;
+  --fusio-border-focus: #3b82f6;
+  --fusio-text: #0f172a;
+  --fusio-text-muted: #64748b;
+  --fusio-error-bg: #fef2f2;
+  --fusio-error-border: #fecaca;
+  --fusio-error-text: #b91c1c;
+  --fusio-success-bg: #f0fdf4;
+  --fusio-success-border: #bbf7d0;
+  --fusio-success-text: #15803d;
+  --fusio-radius: 8px;
+  --fusio-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --fusio-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --fusio-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fusio-primary: #3b82f6;
+    --fusio-primary-hover: #60a5fa;
+    --fusio-primary-text: #ffffff;
+    --fusio-bg: #0f172a;
+    --fusio-surface: #1e293b;
+    --fusio-border: #334155;
+    --fusio-border-focus: #60a5fa;
+    --fusio-text: #f8fafc;
+    --fusio-text-muted: #94a3b8;
+    --fusio-error-bg: #450a0a;
+    --fusio-error-border: #7f1d1d;
+    --fusio-error-text: #fca5a5;
+    --fusio-success-bg: #052e16;
+    --fusio-success-border: #14532d;
+    --fusio-success-text: #86efac;
+    --fusio-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.fusio-component {
+  font-family: var(--fusio-font-family);
+  background-color: var(--fusio-bg);
+  border: 1px solid var(--fusio-border);
+  border-radius: var(--fusio-radius);
+  box-shadow: var(--fusio-shadow);
+  padding: 2rem;
+  max-width: 420px;
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--fusio-text);
+  margin: 0 auto;
+}
+
+.fusio-component *,
+.fusio-component *::before,
+.fusio-component *::after {
+  box-sizing: border-box;
+}
+
+.fusio-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.fusio-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--fusio-text);
+}
+
+.fusio-subtitle {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--fusio-text-muted);
+}
+
+.fusio-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.fusio-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.fusio-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fusio-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--fusio-text);
+}
+
+.fusio-input {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.9375rem;
+  font-family: inherit;
+  color: var(--fusio-text);
+  background-color: var(--fusio-surface);
+  border: 1px solid var(--fusio-border);
+  border-radius: var(--fusio-radius);
+  outline: none;
+  transition: var(--fusio-transition);
+}
+
+.fusio-input:focus {
+  border-color: var(--fusio-border-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.fusio-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.fusio-password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.fusio-password-input {
+  padding-right: 2.75rem;
+}
+
+.fusio-password-toggle {
+  position: absolute;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  font-size: 1.125rem;
+  color: var(--fusio-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.fusio-password-toggle:hover {
+  opacity: 0.8;
+}
+
+.fusio-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: inherit;
+  border-radius: var(--fusio-radius);
+  cursor: pointer;
+  transition: var(--fusio-transition);
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.fusio-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.fusio-button-primary {
+  background-color: var(--fusio-primary);
+  color: var(--fusio-primary-text);
+}
+
+.fusio-button-primary:hover:not(:disabled) {
+  background-color: var(--fusio-primary-hover);
+}
+
+.fusio-button-outline {
+  background-color: transparent;
+  border: 1px solid var(--fusio-border);
+  color: var(--fusio-text);
+}
+
+.fusio-button-outline:hover:not(:disabled) {
+  background-color: var(--fusio-surface);
+}
+
+.fusio-button-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fusio-spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  animation: fusio-spin 0.6s linear infinite;
+}
+
+@keyframes fusio-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fusio-link-button {
+  background: transparent;
+  border: none;
+  color: var(--fusio-primary);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+  transition: var(--fusio-transition);
+}
+
+.fusio-link-button:hover {
+  text-decoration: underline;
+}
+
+.fusio-footer-links {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.fusio-footer-link {
+  font-size: 0.875rem;
+}
+
+/* Alert Messages */
+.fusio-message {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-radius: var(--fusio-radius);
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid transparent;
+}
+
+.fusio-message-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fusio-message-error {
+  background-color: var(--fusio-error-bg);
+  border-color: var(--fusio-error-border);
+  color: var(--fusio-error-text);
+}
+
+.fusio-message-success {
+  background-color: var(--fusio-success-bg);
+  border-color: var(--fusio-success-border);
+  color: var(--fusio-success-text);
+}
+
+.fusio-message-dismiss {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: currentColor;
+  opacity: 0.7;
+}
+
+.fusio-message-dismiss:hover {
+  opacity: 1;
+}
+
+/* OAuth Social Providers */
+.fusio-oauth-section {
+  margin-top: 1.5rem;
+}
+
+.fusio-divider {
+  position: relative;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.fusio-divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--fusio-border);
+}
+
+.fusio-divider span {
+  position: relative;
+  background-color: var(--fusio-bg);
+  padding: 0 0.75rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fusio-text-muted);
+}
+
+.fusio-oauth-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.fusio-oauth-button {
+  gap: 0.625rem;
+}
+
+.fusio-oauth-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+}
+
+.fusio-success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
